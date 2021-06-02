@@ -1,0 +1,36 @@
+{
+  "name": "event-handler-corporate",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "tsc",
+    "start:dev": "tsc && node lib/index.js",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "format": "prettier --write \"src/**/*.ts\" \"src/**/*.js\"",
+    "lint": "tslint -p tsconfig.json"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/joseortizd/event-handler-corporate.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/joseortizd/event-handler-corporate/issues"
+  },
+  "homepage": "https://github.com/joseortizd/event-handler-corporate#readme",
+  "devDependencies": {
+    "@types/uuid": "^8.3.0",
+    "prettier": "^2.3.0",
+    "ts-node": "^10.0.0",
+    "tslint": "^6.1.3",
+    "tslint-config-prettier": "^1.18.0",
+    "typescript": "^4.2.4"
+  },
+  "dependencies": {
+    "@azure/service-bus": "^7.1.0",
+    "uuid": "^8.3.2"
+  }
+}
