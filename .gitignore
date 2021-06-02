@@ -1,8 +1,8 @@
 node_modules
-.idea
+.idea/
 .DS_Store
 package-lock.json
 static/exports
 .env
 coverage
-/lib
+.idea
