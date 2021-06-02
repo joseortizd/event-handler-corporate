@@ -1,9 +1,12 @@
+import {ASBApplicationProperties} from "./ASBApplicationProperties";
+import {EventModel} from "./event.model";
+
 export class ASBEventModel {
-    ContentType: string;
+    applicationProperties: ASBApplicationProperties;
     body: string
 
-    constructor(body: string) {
-        this.ContentType = 'application/json';
-        this.body = body;
+    constructor(event : EventModel) {
+        this.body = event.metadata;
+        this.applicationProperties = new ASBApplicationProperties(event);
     }
 }

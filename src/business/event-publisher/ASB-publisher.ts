@@ -12,8 +12,7 @@ export class ASBPublisher implements Publisher {
             const sbClient = new ServiceBusClient(configurations.connectionString);
             const sender = sbClient.createSender(configurations.topicName);
             let batch = await sender.createMessageBatch();
-            let eventTemp : any = ASBPublisher.serializeEvent(event);
-            eventTemp = ASBPublisher.buildEvent(eventTemp);
+            let eventTemp : any = ASBPublisher.buildEvent(event);
             if (!batch.tryAddMessage(eventTemp)) { throw new Error(`Was not possible to publish message, check for limitations in docs.`); }
             await sender.sendMessages(batch);
             await sender.close();
@@ -24,12 +23,8 @@ export class ASBPublisher implements Publisher {
             throw e;
         }
     }
-    private static  buildEvent (serializedEvent : string): ASBEventModel {
-        return new ASBEventModel(serializedEvent);
-    }
-
-    private static serializeEvent (event : EventModel): string {
-        return JSON.stringify(event);
+    private static  buildEvent (event : EventModel): ASBEventModel {
+        return new ASBEventModel(event);
     }
 
     public static logEvent (logInConsole: boolean, event : any, topicName: string) : void {
