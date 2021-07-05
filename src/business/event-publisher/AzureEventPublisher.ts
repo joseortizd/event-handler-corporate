@@ -4,7 +4,6 @@ import {ASBEventModel} from "../models/ASBEvent.model";
 const { ServiceBusClient } = require("@azure/service-bus");
 const { PublisherConfigurations } = require("../../repository/configurations/publisher-configurations");
 
-
 export class ASBPublisher implements Publisher {
     public async publish(event: EventModel): Promise<boolean> {
         try {
