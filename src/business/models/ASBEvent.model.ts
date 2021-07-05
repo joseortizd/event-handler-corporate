@@ -9,4 +9,9 @@ export class ASBEventModel {
         this.body = event.metadata;
         this.applicationProperties = new ASBApplicationProperties(event);
     }
+
+    public parseReceivedMessage (event : any){
+        if (event.body) this.body = event.body;
+        if (event.applicationProperties) this.applicationProperties = event.applicationProperties;
+    }
 }

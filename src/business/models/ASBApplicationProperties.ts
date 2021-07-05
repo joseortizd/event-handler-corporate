@@ -3,7 +3,7 @@ import {EventModel} from "./event.model";
 export class ASBApplicationProperties {
     eventId : string;
     eventType : string;
-    datetime : Date;
+    datetime : string;
     version : string;
     country : string;
     commerce : string;
@@ -12,7 +12,9 @@ export class ASBApplicationProperties {
     capability : string;
     mimeType : string;
     entityId : string;
-    timestamp : number;
+    timestamp : string;
+    entityType: string;
+    metadata: string;
 
     constructor(event : EventModel) {
         this.eventId = event.eventId;
@@ -27,5 +29,7 @@ export class ASBApplicationProperties {
         this.mimeType = event.mimeType;
         this.entityId = event.entityId;
         this.timestamp = event.timestamp;
+        this.entityType = event.entityType;
+        this.metadata = event.metadata;
     }
 }

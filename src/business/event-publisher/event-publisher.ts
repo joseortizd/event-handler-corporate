@@ -1,5 +1,5 @@
 import {EventPublisher} from "./strategy-event-publisher.service";
-import {ASBPublisher} from "./ASB-publisher";
+import {AzureEventPublisher} from "./AzureEventPublisher";
 import {LogPublisher} from "./log-publisher";
 import {EventModel} from "../models/event.model";
 import {EventHandlerConfigurations} from "../../repository/configurations/event-handler-general-configurations";
@@ -11,7 +11,7 @@ export async function publish(event : EventModel): Promise<boolean> {
         let eventPublisher: EventPublisher;
         switch (configurations.provider) {
             case 'AZURE': {
-                eventPublisher = new EventPublisher(new ASBPublisher());
+                eventPublisher = new EventPublisher(new AzureEventPublisher());
                 break;
             }
             default:

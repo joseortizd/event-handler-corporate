@@ -1,4 +1,4 @@
-export class AbsPublisherConfig {
+export class AsbPublisherConfig {
     connectionString : string;
     topicName : string;
     logInConsole : boolean;

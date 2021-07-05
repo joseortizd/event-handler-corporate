@@ -1,13 +1,5 @@
 import {EventModel} from "./src/business/models/event.model";
 import { publish } from "./src/business/event-publisher/event-publisher";
-process.env.EVENT_HANDLER_DEBUG = "false";
-//process.env.EVENT_HANDLER_PUBLISHER_ABS_CONNECTION_STRING =  "Endpoint=sb://testloggerjg2021.servicebus.windows.net/;SharedAccessKeyName=jggg;SharedAccessKey=mc7lFaXPiedMUhb7olUElaclSULaRe/RV6uhwLU3iYw=;EntityPath=testjg";
-process.env.EVENT_HANDLER_PUBLISHER_ABS_CONNECTION_STRING =  "Endpoint=sb://sfservicebusdev.servicebus.windows.net/;SharedAccessKeyName=auditCreatedEventNotification_cl_sas;SharedAccessKey=FfJiISpZduKtP4QHzGv/dmfyDn0RVuaqFAlZB3SF9zE=;EntityPath=auditcreatedeventnotification_cl";
-//process.env.EVENT_HANDLER_PUBLISHER_ABS_TOPIC_NAME = "testjg";
-process.env.EVENT_HANDLER_PUBLISHER_ABS_TOPIC_NAME = "auditcreatedeventnotification_cl";
-process.env.EVENT_HANDLER_PUBLISHER_CONSOLE_LOG_ACTIVATE = "true";
-process.env.EVENT_HANDLER_PUBLISHER_PROVIDER = "AZURE";
-
 
 let metadata ={
         "flow":"hola david",
@@ -78,7 +70,6 @@ let metadata ={
             }
         }
     };
-
 
 let fecha : any = new Date();
 fecha = fecha.toISOString();

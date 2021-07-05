@@ -1,9 +1,10 @@
 import { v4 as uuid } from 'uuid';
 
 export class EventModel {
+
     eventId : string;
     eventType : string;
-    datetime : Date;
+    datetime : string;
     version : string;
     country : string;
     commerce : string;
@@ -13,13 +14,14 @@ export class EventModel {
     mimeType : string;
     metadata : string;
     entityId : string;
-    timestamp : number;
+    entityType : string;
+    timestamp : string;
 
-    constructor(eventType: string, entityId: string, datetime: Date, version: string, country: string, commerce: string, channel: string, domain: string, capability: string, mimeType: string, metadata: string, eventId?: string, timestamp? : number) {
-        this.eventId = eventId ? eventId : uuid(); // TODO  revisar valor por defecto
+    constructor(eventType: string, entityId: string, datetime: string, version: string, country: string, commerce: string, channel: string, domain: string, capability: string, mimeType: string, entityType: string, metadata: string, eventId?: string, timestamp? : string) {
+        this.eventId = eventId ? eventId : uuid();
         this.eventType = eventType;
         this.entityId = entityId;
-        this.timestamp = timestamp ? timestamp : new Date().valueOf();
+        this.timestamp = timestamp ? timestamp : new Date().valueOf().toString();
         this.datetime = datetime;
         this.version = version;
         this.country = country;
@@ -28,10 +30,11 @@ export class EventModel {
         this.domain = domain;
         this.capability = capability;
         this.mimeType = mimeType;
+        this.entityType = entityType;
         this.metadata = metadata;
     }
 
-    setTimestamp (timestamp : number) {
+    setTimestamp (timestamp : string) {
         this.timestamp = timestamp;
     }
 
